@@ -6,13 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_margin="8dp"
+                android:background="@mipmap/ic_launcher"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:layout_margin="8dp"
+                android:hint="广州"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:padding="2dp"
+                android:layout_margin="8dp"
+                android:hint="请输入饭店名称或菜名"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_below="@+id/top">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="centerInside"
+                android:background="@drawable/food_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/click_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_below="@+id/show">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:background="@mipmap/ic_launcher" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_restaurants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:layout_below="@+id/click_scan">
+
+        </ListView>
+
+    </RelativeLayout>
+
 
 </android.support.constraint.ConstraintLayout>
